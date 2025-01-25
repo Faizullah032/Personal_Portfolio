@@ -1,100 +1,180 @@
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-primary text-white min-h-screen">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-primary shadow-md">
+        <div className="container mx-auto flex justify-between items-center py-4 px-6">
+          <h1 className="text-2xl font-bold">MyPortfolio</h1>
+          <nav className="hidden md:flex space-x-6 items-center">
+            <a href="#home" className="hover:text-accent">Home</a>
+            <a href="#about" className="hover:text-accent">About</a>
+            <a href="#projects" className="hover:text-accent">Projects</a>
+            <a href="#contact" className="hover:text-accent">Contact</a>
+            <a
+              href="#contact"
+              className="bg-accent text-black px-4 py-2 rounded-md hover:bg-green-600"
+            >
+              Hire Me
+            </a>
+          </nav>
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <button id="menu-toggle" className="text-accent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      </header>
+
+      {/* Hero Section */}
+      <section
+        id="home"
+        className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 to-primary px-4"
+      >
+         <img
+              src="/hero-image.png"
+              alt="Your Portrait"
+              className="w-40 h-40 rounded-full mb-6 md:mb-0 md:mr-8"
+            />
+        <h2 className="text-4xl md:text-6xl font-bold mb-4">
+          Hello, I'm <span className="text-accent">Faizullah</span>
+        </h2>
+        <p className="text-lg md:text-2xl mb-6">
+          I create beautiful and efficient web applications.
+        </p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#projects"
+          className="bg-accent text-black px-6 py-3 rounded-md text-lg hover:bg-green-600"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          View My Work
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-primary px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">About Me</h2>
+          <div className="flex flex-col md:flex-row items-center">
+            <img
+              src="/about-image.png"
+              alt="Your Portrait"
+              className="w-40 h-40 rounded-full mb-6 md:mb-0 md:mr-8"
+            />
+            <div>
+              <p className="mb-4">
+                Hi, I'm Faizullah, a passionate web developer with experience
+                in building modern web applications. I specialize in JavaScript,
+                React, and Node.js, and I love creating user-friendly and
+                efficient solutions.
+              </p>
+              <p>
+                My goal is to deliver high-quality code and design that meets
+                the needs of my clients and users.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex flex-col items-center">
+              <img src="/js.png" alt="JavaScript" className="w-12 h-12" />
+              <p>JavaScript</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <img src="/react.png" alt="React" className="w-12 h-12" />
+              <p>React</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <img src="/bootstrap.png" alt="Bootstrap" className="w-12 h-12" />
+              <p>Bootstrap</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <img src="/tailwind.png" alt="Tailwind CSS" className="w-12 h-12" />
+              <p>Tailwind CSS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-secondary px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">My Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Project Card */}
+            <div className="bg-primary p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-2">Project 1</h3>
+              <p className="mb-4">A brief description of the project.</p>
+              <a
+                href="#"
+                className="text-accent hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Live Demo
+              </a>
+            </div>
+            {/* Add more project cards as needed */}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-primary px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">Contact Me</h2>
+          <form className="max-w-lg mx-auto">
+            <div className="mb-4">
+              <label className="block mb-2">Name</label>
+              <input
+                type="text"
+                className="w-full px-4 py-2 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Email</label>
+              <input
+                type="email"
+                className="w-full px-4 py-2 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Message</label>
+              <textarea
+                className="w-full px-4 py-2 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+                rows="4"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-accent text-black px-4 py-2 rounded-md hover:bg-green-600"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 bg-secondary text-center">
+        <p>&copy; 2025 Faizullah. All rights reserved.</p>
+        <div className="flex justify-center space-x-4 mt-4">
+          <a href="#" className="hover:text-accent">LinkedIn</a>
+          <a href="#" className="hover:text-accent">GitHub</a>
+          <a href="#" className="hover:text-accent">Twitter</a>
+        </div>
       </footer>
     </div>
   );
